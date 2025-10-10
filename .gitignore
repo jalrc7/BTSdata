@@ -13,3 +13,4 @@ azure_func/out/
 *.gz
 *.xz
 *.7z
+.DS_Store
