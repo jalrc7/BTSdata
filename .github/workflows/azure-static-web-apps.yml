@@ -20,4 +20,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "frontend"
-          skip_app_build: true
+          api_location: "azure_func"     # <— add this
+          skip_app_build: true   
