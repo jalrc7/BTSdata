@@ -1,5 +1,12 @@
 .DS_Store
+__pycache__/
+*.log
+
+.venv/
+azure_func/local.settings.json
+
 out/
+azure_func/out/
 *.csv
 *.parquet
 *.zip
