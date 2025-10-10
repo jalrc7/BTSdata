@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>T-100 Download</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <h1>T-100 Download</h1>
+
+      <!-- loader -->
+      <div id="loader" class="loader hidden" aria-live="polite" aria-busy="true">
+        <div class="spinner"></div>
+        <span class="loader-text">Loading…</span>
+      </div>
+
+      <!-- input mode toggle -->
+      <div class="mode-toggle">
+        <label><input type="radio" name="mode" value="dropdown" checked> Dropdowns</label>
+        <label><input type="radio" name="mode" value="typeahead"> Type to search</label>
+      </div>
+
+      <form id="form" onsubmit="return false;">
+        <div class="grid">
+          <!-- Years -->
+          <div class="field">
+            <label>Year From</label>
+            <!-- dropdown -->
+            <select id="year_from_select" class="mode-dropdown"></select>
+            <!-- typeahead -->
+            <input id="year_from_input" class="mode-typeahead hidden" list="years_list" placeholder="Start year…" inputmode="numeric" />
+          </div>
+
+          <div class="field">
+            <label>Year To</label>
+            <select id="year_to_select" class="mode-dropdown"></select>
+            <input id="year_to_input" class="mode-typeahead hidden" list="years_list" placeholder="End year…" inputmode="numeric" />
+          </div>
+
+          <datalist id="years_list"></datalist>
+
+          <!-- Origin -->
+          <div class="field stretch">
+            <label>Origin</label>
+            <select id="origin_select" class="mode-dropdown"></select>
+            <input id="origin_input" class="mode-typeahead hidden" list="origins_list" placeholder="Type an airport code (e.g., JFK)" />
+            <datalist id="origins_list"></datalist>
+          </div>
+
+          <!-- Quarters -->
+          <div class="field quarters">
+            <label>Quarters</label>
+            <div class="quarters-row">
+              <label><input type="checkbox" name="quarters" value="1" checked> Q1</label>
+              <label><input type="checkbox" name="quarters" value="2" checked> Q2</label>
+              <label><input type="checkbox" name="quarters" value="3" checked> Q3</label>
+              <label><input type="checkbox" name="quarters" value="4" checked> Q4</label>
+            </div>
+          </div>
+        </div>
+
+        <button id="go" class="primary">Build file</button>
+      </form>
+
+      <p id="status" class="status"></p>
+      <p><a id="download" href="#" target="_blank" class="download-link hidden">Download file</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
