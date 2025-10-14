@@ -3,7 +3,6 @@ __pycache__/
 *.log
 
 .venv/
-azure_func/local.settings.json
 
 out/
 azure_func/out/
