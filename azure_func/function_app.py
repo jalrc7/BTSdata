@@ -10,6 +10,6 @@ def ping(req: func.HttpRequest) -> func.HttpResponse:
 import pipeline_t100  # --- IGNORE ---
 import count_rowst100  # --- IGNORE ---
 import manifest_t100  # --- IGNORE ---
-import db1b_timer  # --- IGNORE ---
+#import db1b_timer  # --- IGNORE ---
 import download_t100  # --- IGNORE ---
 import list_t100  # --- IGNORE ---
