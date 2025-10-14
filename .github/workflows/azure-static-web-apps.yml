@@ -7,8 +7,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches: [main]
 
-
-
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -16,10 +14,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy Static Web App (static files, no build)
+      # (Optional) Debug: prove both folders exist
+      - name: Show repo tree
+        run: |
+          ls -la
+          ls -la frontend || true
+          ls -la azure_func || true
+          test -f azure_func/host.json && echo "host.json found"
+
+      - name: Deploy Static Web App (static files + Python API)
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_SKY_06EF4380F }}
           action: upload
           app_location: frontend
-          skip_app_build: true      # <- keep this
+          skip_app_build: true
+          api_location: azure_func
+          # optional if your config file isn't at repo root:
+          # config_file_location: /
