@@ -17,20 +17,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy Static Web App (SWA builds Vite)
+      - name: Deploy Static Web App (static files, no build)
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_SKY_06EF4380F }}
-          action: "upload"
-          app_location: "frontend"                # folder with your Vite app
-          app_build_command: "npm ci && npm run build"
-          output_location: "dist"     
-          skip_app_build: true   # Vite's default output folder
-          # api_location: "azure_func"            # if you want to link your API later
+          action: upload
+          app_location: frontend
+          skip_app_build: true      # <- keep this
+          # no app_build_command
+          # no output_location
+          # no api_location
 
-      - name: Print function URL (for testing — remove in prod)
-        run: echo $FUNCTION_API_URL
+      # Optional: test the function URL from CI
+      - name: Print function URL (for testing)
+        run: echo "$FUNCTION_API_URL"
 
-      - name: Call function or build with URL
-        run: curl "$FUNCTION_API_URL"
-
+      - name: Call function (for testing)
+        run: curl -sS "$FUNCTION_API_URL"
