@@ -14,3 +14,4 @@ azure_func/out/
 *.7z
 .DS_Store
 local.settings.json
+.vscode/
