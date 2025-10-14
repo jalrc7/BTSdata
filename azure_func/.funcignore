@@ -1,3 +1,19 @@
+# Ignore local venv and build artifacts
+.venv/
+.python_packages/
+__pycache__/
+*.pyc
+.DS_Store
 
+# Ignore data/output files
+out/
+azure_func/out/
+*.csv
+*.parquet
+*.zip
+*.gz
+*.xz
+*.7z
 
-.venv
+# Ignore logs
+*.log
