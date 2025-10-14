@@ -7,8 +7,7 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches: [main]
 
-env:
-  FUNCTION_API_URL: ${{ secrets.FUNCTION_API_URL }}
+
 
 jobs:
   build_and_deploy_job:
@@ -24,15 +23,3 @@ jobs:
           action: upload
           app_location: frontend
           skip_app_build: true      # <- keep this
-          api_location: "azure_func"
-
-          # no app_build_command
-          # no output_location
-          # no api_location
-
-      # Optional: test the function URL from CI
-      - name: Print function URL (for testing)
-        run: echo "$FUNCTION_API_URL"
-
-      - name: Call function (for testing)
-        run: curl -sS "$FUNCTION_API_URL"
