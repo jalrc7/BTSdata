@@ -24,7 +24,8 @@ jobs:
           action: "upload"
           app_location: "frontend"                # folder with your Vite app
           app_build_command: "npm ci && npm run build"
-          output_location: "dist"                 # Vite's default output folder
+          output_location: "dist"     
+          skip_app_build: true   # Vite's default output folder
           # api_location: "azure_func"            # if you want to link your API later
 
       - name: Print function URL (for testing — remove in prod)
