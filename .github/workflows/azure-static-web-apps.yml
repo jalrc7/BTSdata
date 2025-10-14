@@ -24,6 +24,8 @@ jobs:
           action: upload
           app_location: frontend
           skip_app_build: true      # <- keep this
+          api_location: "azure_func"
+
           # no app_build_command
           # no output_location
           # no api_location
