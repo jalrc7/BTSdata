@@ -13,3 +13,4 @@ azure_func/out/
 *.xz
 *.7z
 .DS_Store
+local.settings.json
