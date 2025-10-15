@@ -11,4 +11,4 @@ def ping(req: func.HttpRequest) -> func.HttpResponse:
 #import manifest_t100  # --- IGNORE ---
 #import db1b_timer  # --- IGNORE ---
 
-from . import  download_t100, list_t100
+from . import  download_t100
