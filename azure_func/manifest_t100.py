@@ -1,10 +1,12 @@
 # azure_func/build_manifest_timer.py
-from function_app import app
 import os
 import logging
 from datetime import date
+
 import azure.functions as func
 from azure.storage.blob import BlobServiceClient
+
+from function_app import app
 import count_rowst100
 
 def _get_blob_service():
@@ -29,8 +31,9 @@ def _loader(bc):
     return _load
 
 
-@app.timer_trigger(
-    schedule="0 10 0 1 * *",   # run after your monthly pipeline
+@app.function_name(name="BuildManifestTimer")
+@app.schedule(
+    schedule="0 10 0 1 * *",   # first of month 00:10 UTC
     arg_name="myTimer",
     run_on_startup=False,
     use_monitor=True

@@ -36,10 +36,11 @@ def _touch_blob(container: str, name: str):
     bc = bsc.get_container_client(container)
     bc.upload_blob(name, b"", overwrite=True)
 
-@app.timer_trigger( 
-    schedule="0 0 0 1 * *",  # run monthly on the 1st at 00:00
+@app.function_name(name="BtsPipelineTimer")
+@app.schedule(
+    schedule="0 0 0 1 * *",   # 1st of month @ 00:00 (UTC)
     arg_name="myTimer",
-    run_on_startup=False,     # set True ONLY when you want to force immediate run locally
+    run_on_startup=False,
     use_monitor=True
 )
 def BtsPipelineTimer(myTimer: func.TimerRequest):

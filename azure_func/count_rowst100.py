@@ -2,7 +2,9 @@
 import io
 import json
 from datetime import date
+from typing import Callable, Dict, List
 import pandas as pd
+
 
 AIRPORT_COL = "ORIGIN"
 QUARTER_COL = "QUARTER"  # values 1..4
