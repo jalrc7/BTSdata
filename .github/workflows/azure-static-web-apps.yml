@@ -31,6 +31,6 @@ jobs:
           skip_app_build: true
           api_location: azure_func
           api_build_command: |
-            oryx build azure_func --platform python --platform-version 3.10
+            oryx build azure_func --platform python --platform-version 3.11
           # optional if your config file isn't at repo root:
           # config_file_location: /
