@@ -1,5 +1,6 @@
+*
 !function_app.py
 !host.json
-!__init__.py
 !requirements.txt
 !runtime.txt
+!__init__.py

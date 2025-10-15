@@ -1,16 +1,2 @@
 # Azure Functions + Azure SDK
 azure-functions==1.20.0
-azure-core==1.30.2
-azure-storage-blob==12.20.0
-
-# Web + parsing
-requests==2.32.3
-beautifulsoup4==4.12.3
-lxml==5.3.0
-pandas==2.2.2
-# Logging / retry helpers
-tenacity==8.5.0
-
-# Optional: for local .env loading (if you use it)
-python-dotenv==1.0.1
-
