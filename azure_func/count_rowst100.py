@@ -3,6 +3,7 @@ import io
 import json
 from datetime import date
 import pandas as pd
+from .function_app import app
 
 
 AIRPORT_COL = "ORIGIN"
