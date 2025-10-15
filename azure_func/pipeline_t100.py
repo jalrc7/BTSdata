@@ -1,11 +1,12 @@
+# azure_func/pipeline_t100.py file
+
 import os
 import logging
 from datetime import date
 import azure.functions as func
-import count_rowst100 
-from pipeline.t100.fetch import handle_year
+from .pipeline.t100.fetch import handle_year
 from azure.storage.blob import BlobServiceClient
-from function_app import app
+from .function_app import app
 
 
 def _get_blob_service():

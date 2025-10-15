@@ -3,7 +3,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import azure.functions as func
 import os, io, csv, json, uuid, datetime, logging
 from azure.storage.blob import BlobServiceClient, generate_blob_sas, BlobSasPermissions
-from function_app import app
+from .function_app import app
 
 EXCEL_MAX_ROWS = 1_000_000
 CONTAINER = os.getenv("BTS_CONTAINER", "bts-t100")

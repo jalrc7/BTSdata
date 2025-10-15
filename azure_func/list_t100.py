@@ -1,7 +1,7 @@
 import azure.functions as func
 import json, os
 from azure.storage.blob import BlobServiceClient
-from function_app import app
+from .function_app import app
 
 CONTAINER = os.getenv("BTS_CONTAINER", "bts-t100")
 MANIFEST_BLOB = "manifests/index.json"

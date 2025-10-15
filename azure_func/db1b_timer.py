@@ -3,8 +3,8 @@ import os, logging
 from datetime import date, timedelta
 import azure.functions as func
 from azure.storage.blob import BlobServiceClient, ContentSettings
-from function_app import app
-from pipeline.db1bmarket.fetch import handle_year
+from .function_app import app
+from .pipeline.db1bmarket.fetch import handle_year
 
 
 # ----- helpers --------------------------------

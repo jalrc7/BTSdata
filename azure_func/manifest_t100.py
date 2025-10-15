@@ -5,9 +5,8 @@ from datetime import date
 
 import azure.functions as func
 from azure.storage.blob import BlobServiceClient
-
-from function_app import app
-import count_rowst100
+from .function_app import app
+from . import count_rowst100
 
 def _get_blob_service():
     conn = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
